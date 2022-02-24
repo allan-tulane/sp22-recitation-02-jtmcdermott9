@@ -48,6 +48,21 @@ where $W(1) = 1$.
 
 - [ ] 4. (2 point) Now, derive the asymptotic behavior of $W(n)$ using $f(n) = 1$, $f(n) = \log n$ and $f(n) = n$. Then, generate actual values for $W(n)$ for your code and confirm that the trends match your derivations.
 
+- For a < b:
+	-W(n) = aW(n/2) + 1 is an element of O(1)
+	-W(n) = aW(n/2) + n is an element of O(n)
+  -W(n) = aW(n/2) + log n is an element of O( log n)
+  For a > b:
+	-W(n) = aW(n/2) + 1 is an element of O(n)
+  -W(n) = aW(n/2) +  n is an element of O(n^log_b a)
+  -W(n) =aW(n/2) + log n  is an element of O(n^2)
+
+- For a = b:
+- -W(n) = aW(n/b) + 1 is an element of O(log n)
+- -W(n) = aW(n/b) + n is an element of O(n log n)
+- -W(n) = aW(n/b) + log n is an element of O(log^2 n)
+- 
+
 **TODO: your answer goes here**
 
 - [ ] 5. (4 points) Now that you have a nice way to empirically generate valuess of $W(n)$, we can look at the relationship between $a$, $b$, and $f(n)$. Suppose that $f(n) = n^c$. What is the asypmptotic behavior of $W(n)$ if $c < \log_b a$? What about $c > \log_b a$? And if they are equal? Modify `compare_work` to compare empirical values for different work functions (at several different values of $n$) to justify your answer. 
